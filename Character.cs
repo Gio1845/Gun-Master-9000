@@ -15,7 +15,7 @@ namespace  Gun_Master_9000
         }
         public void Shoot(Target target){
             if(this.gun == null){
-                throw new System.InvalidOperationException("character can't Shoot");
+                throw new System.InvalidOperationException("character can't shoot without a gun");
             }
             try{
                 this.gun.Shoot(target);
@@ -24,6 +24,12 @@ namespace  Gun_Master_9000
 
             }
         }
+        public void Reload(){
+            if(this.gun == null){
+                throw new System.InvalidOperationException("character can't Reload without a gun");
+        }
+        this.gun.Reload();
         
     }
+}
 }
